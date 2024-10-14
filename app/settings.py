@@ -78,8 +78,9 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+        "NAME": BASE_DIR
+        / "db.sqlite3",  # это однофайловая база данных которая используется
+    }  # в джанго исключительно на стадии разработки приложения
 }
 
 
@@ -105,7 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ru-ru"
 
 TIME_ZONE = "UTC"
 
@@ -127,4 +128,4 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"  # автоматически создает id
