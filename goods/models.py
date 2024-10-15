@@ -50,6 +50,10 @@ class Product(models.Model):
     def __str__(self):
         return f"{self.name} Количество товаров - {self.quantity}"
 
+    def display_id(self):
+        return f"{self.id:05}"
 
-# эти классы нужны не только для того чтобы создавать таблицы в базе данных
-# через эти классы нам предоставляется API, ORM Системы для взаимадействия непосредственно с таблицами
+    def sell_price(self):
+        if self.discount:
+            return round(self.price - self.price * self.discount / 100, 2)
+        return self.price
