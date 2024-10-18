@@ -26,4 +26,10 @@ def cart_add(request, product_slug):
 def cart_change(request, product_slug): ...
 
 
-def cart_remove(request, product_slug): ...
+def cart_remove(request, cart_id):
+
+    cart = Cart.objects.get(id=cart_id)
+
+    cart.delete()
+
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
