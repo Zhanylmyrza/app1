@@ -43,5 +43,5 @@ class Cart(models.Model):
     def product_price(self):
         return round(self.product.sell_price() * self.quantity, 2)
 
-    def __str__(self):
-        return f"Карзина {self.user.username} | Товар {self.product.name} | Количество {self.quantity}"
+    # def __str__(self):
+    #     return f"Карзина {self.user.username} | Товар {self.product.name} | Количество {self.quantity}"
